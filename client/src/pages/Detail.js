@@ -5,8 +5,10 @@ import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
 import { QUERY_PRODUCTS } from '../utils/queries';
-import spinner from '../assets/spinner.gif';
 import { UPDATE_PRODUCTS } from '../utils/actions';
+import spinner from '../assets/spinner.gif';
+
+import Cart from '../components/Cart';
 
 const Detail = () => {
   const [state, dispatch] = useStoreContext();
@@ -48,6 +50,7 @@ const Detail = () => {
         </div>
       ) : null}
       {loading ? <img src={spinner} alt='loading' /> : null}
+      <Cart />
     </>
   );
 };
