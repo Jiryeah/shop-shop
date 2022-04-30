@@ -11,12 +11,12 @@ const Cart = () => {
   const [state, dispatch] = useStoreContext();
 
   useEffect(() => {
-    const getCart = async () => {
+    async function getCart() {
       // cart variable will contain all of the retrieved info from the 'cart' store.
       const cart = await idbPromise('cart', 'get');
       // we will then add the new cart info to the global state object using the add_multiple_to_cart action.
       dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
-    };
+    }
     // if there's nothing in the carts current state, we'll populate the the cart with the cart info from the IndexedDB cache
     if (!state.cart.length) {
       getCart();
