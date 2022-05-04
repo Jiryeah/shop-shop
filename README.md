@@ -28,7 +28,7 @@ WHEN I am able took look through the catalog
 THEN I can add selected items to my cart and checkoout
 ```
 ## Screenshot
-- <img width="1433" alt="Screen Shot 2022-05-04 at 12 24 43 PM" src="https://user-images.githubusercontent.com/92201576/166744432-eabc459b-49ad-4a64-859a-f8fbbbbf4e4c.png">
+<img width="1433" alt="Screen Shot 2022-05-04 at 12 24 43 PM" src="https://user-images.githubusercontent.com/92201576/166744432-eabc459b-49ad-4a64-859a-f8fbbbbf4e4c.png">
 
 
 ### Technologies Used
