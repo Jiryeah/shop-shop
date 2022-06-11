@@ -10,7 +10,7 @@
 
 # Summary
 
-This is an Ecommerce site that allows the user to browse and purchase items through stripe. 
+This is an E-commerce site that allows the user to browse and purchase items through stripe.
 
 # User Story
 
@@ -25,11 +25,12 @@ SO THAT I can purchase my selected items and get confirmation of my purchase
 ```md
 GIVEN a url to Shop-shop
 WHEN I am able took look through the catalog
-THEN I can add selected items to my cart and checkoout
+THEN I can add selected items to my cart and checkout
 ```
-## Screenshot
-<img width="1433" alt="Screen Shot 2022-05-04 at 12 24 43 PM" src="https://user-images.githubusercontent.com/92201576/166744432-eabc459b-49ad-4a64-859a-f8fbbbbf4e4c.png">
 
+## Screenshot
+
+<img width="1433" alt="Screen Shot 2022-05-04 at 12 24 43 PM" src="https://user-images.githubusercontent.com/92201576/166744432-eabc459b-49ad-4a64-859a-f8fbbbbf4e4c.png">
 
 ### Technologies Used
 
@@ -55,4 +56,5 @@ THEN I can add selected items to my cart and checkoout
 - Faissal Shabani
 
 ## License
+
 [MIT](https://choosealicense.com/licenses/mit/)
