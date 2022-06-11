@@ -30,13 +30,13 @@ const typeDefs = gql`
     orders: [Order]
   }
 
+  type Checkout {
+    session: ID
+  }
+
   type Auth {
     token: ID
     user: User
-  }
-
-  type Checkout {
-    session: ID
   }
 
   type Query {

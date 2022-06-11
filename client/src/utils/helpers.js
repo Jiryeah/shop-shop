@@ -5,43 +5,27 @@ export function pluralize(name, count) {
   return name + 's';
 }
 
-// idbPromise() will open the DB connection,
-// will connect to the object store that we pass as 'storeName'.
-// Then we'll perform a transaction using the method & object value to help carry it out.
 export function idbPromise(storeName, method, object) {
-  // will wrapped in a Promise to make it a lot easier to work with since IndexedDB's async nature.
   return new Promise((resolve, reject) => {
-    // open the connection to the database `shop-shop` with the version of 1
     const request = window.indexedDB.open('shop-shop', 1);
-
-    // create variables to hold reference to the database, transaction(tx), and object store
     let db, tx, store;
-
-    // if version has changed( or if this is the first time using the database), run this method and create the three object stores
-    request.onupgradeneeded = function (e) {
+    request.onupgradeneeded = function(e) {
       const db = request.result;
-      // create object store for each type of data and set 'primary' key index to be the `_id` of the data
       db.createObjectStore('products', { keyPath: '_id' });
       db.createObjectStore('categories', { keyPath: '_id' });
       db.createObjectStore('cart', { keyPath: '_id' });
     };
 
-    // handle any errors with connecting
-    request.onerror = function (e) {
+    request.onerror = function(e) {
       console.log('There was an error');
     };
 
-    // on database open success
-    request.onsuccess = function (e) {
-      // save a reference of the database to the `db` variable
+    request.onsuccess = function(e) {
       db = request.result;
-      //open a transaction do whatever we pass into `storeName` (must match one of the object store names)
       tx = db.transaction(storeName, 'readwrite');
-      // save a reference to that object store
       store = tx.objectStore(storeName);
 
-      // if there's any errors, let us know
-      db.onerror = function (e) {
+      db.onerror = function(e) {
         console.log('error', e);
       };
 
@@ -52,7 +36,7 @@ export function idbPromise(storeName, method, object) {
           break;
         case 'get':
           const all = store.getAll();
-          all.onsuccess = function () {
+          all.onsuccess = function() {
             resolve(all.result);
           };
           break;
@@ -64,8 +48,7 @@ export function idbPromise(storeName, method, object) {
           break;
       }
 
-      // when the transaction is complete, close the connection
-      tx.oncomplete = function () {
+      tx.oncomplete = function() {
         db.close();
       };
     };
