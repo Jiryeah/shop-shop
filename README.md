@@ -1,6 +1,15 @@
-# Shop-shop
+# Table of Contents
 
-## Table of Contents
+## Install
+1. Clone repo
+2. Install Dependencies
+```md
+npm i
+```
+3. Run app
+```md
+npm run start
+```
 
 - [User Story](#user-story)
 - [Requirements](#requirements)
